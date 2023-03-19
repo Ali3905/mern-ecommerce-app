@@ -18,7 +18,7 @@ const Login = () => {
     const { email, password } = creds
     const res = await axios({
         method: 'post',
-        url: "http://localhost:8000/api/login",
+        url: "http://mern-ecommerce-app-api/api/login",
         data: { email, password },
       });
         console.log(res);

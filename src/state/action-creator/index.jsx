@@ -4,7 +4,7 @@ export const cart = (item) => {
         return async(dispatch)=>{
         const res = await axios({
             method: "get",
-            url: "http://localhost:8000/api/getItems",
+            url: "http://mern-ecommerce-app-api/api/getItems",
             })
             dispatch({
                 type : 'cart',
@@ -19,7 +19,7 @@ export const fetchCart = (item) => {
     return async(dispatch)=>{
         const res = await axios({
             method: "get",
-            url: "http://localhost:8000/api/fetchcart",
+            url: "http://mern-ecommerce-app-api/api/fetchcart",
             headers: {
             authToken: localStorage.getItem("token")}
             })
@@ -34,7 +34,7 @@ export const addToCart = (id) => {
     return async(dispatch)=>{
         const res = await axios({
             method: "post",
-            url: `http://localhost:8000/api/addtocart/${id}`,
+            url: `http://mern-ecommerce-app-api/api/addtocart/${id}`,
             headers: {
             authToken: localStorage.getItem("token")       }
             }) 
@@ -50,7 +50,7 @@ export const removeFromCart = (id) => {
     return async(dispatch)=>{
         const res = await axios({
             method: "delete",
-            url: `http://localhost:8000/api/deletfromcart/${id}`,
+            url: `http://mern-ecommerce-app-api/api/deletfromcart/${id}`,
             headers: {
             authToken: localStorage.getItem("token")           }
             })
@@ -66,7 +66,7 @@ export const emptyCart = (item) => {
     return async(dispatch)=>{
         const res = await axios({
             method: "delete",
-            url: `http://localhost:8000/api/emptycart`,
+            url: `http://mern-ecommerce-app-api/api/emptycart`,
             headers: {
             authToken: localStorage.getItem("token")           }
             })
@@ -82,7 +82,7 @@ export const getAddresses = (item) => {
     return async(dispatch)=>{
         const res = await axios({
             method: "get",
-            url: "http://localhost:8000/api/getaddresses",
+            url: "http://mern-ecommerce-app-api/api/getaddresses",
             headers: {
             authToken: localStorage.getItem("token")           }
             })
@@ -99,7 +99,7 @@ export const addAddress = (item) => {
         const { name, email, phone, address } = item
         const res = await axios({
             method: 'post',
-            url: "http://localhost:8000/api/addaddress",
+            url: "http://mern-ecommerce-app-api/api/addaddress",
             data: { name, email, phone, address },
             headers: {
                 authToken: localStorage.getItem("token")           }
@@ -117,7 +117,7 @@ export const removeAddress = (id) => {
         return async(dispatch)=>{
             const res = await axios({
                 method: "delete",
-                url: `http://localhost:8000/api/removeaddress/${id}`,
+                url: `http://mern-ecommerce-app-api/api/removeaddress/${id}`,
                 headers: {
                 authToken: localStorage.getItem("token")           }
                 })
@@ -133,7 +133,7 @@ export const addOrder = (item) => {
             const { items, bill, address } = item
             const res = await axios({
             method: 'post',
-            url: "http://localhost:8000/api/addorder",
+            url: "http://mern-ecommerce-app-api/api/addorder",
             data: { items, bill, address },
             headers: {
                 authToken: localStorage.getItem("token")           }
@@ -151,7 +151,7 @@ export const order = (item) => {
         return async(dispatch)=>{
             const res = await axios({
                 method: "get",
-                url: "http://localhost:8000/api/getorders",
+                url: "http://mern-ecommerce-app-api/api/getorders",
                 headers: {
                 authToken: localStorage.getItem("token")           }
                 })
@@ -168,7 +168,7 @@ export const signup = (item) => {
         const { name, email, password } = item
         const res = await axios({
             method: 'post',
-            url: "http://localhost:8000/api/signup",
+            url: "http://mern-ecommerce-app-api/api/signup",
             data: { name, email, password },
  
           });
@@ -185,7 +185,7 @@ export const signup = (item) => {
 //     const { email, password } = item
 //     const res = await axios({
 //         method: 'post',
-//         url: "http://localhost:8000/api/login",
+//         url: "http://mern-ecommerce-app-api/api/login",
 //         data: { email, password },
 //       });
 //         // console.log(res);
@@ -200,7 +200,7 @@ export const signup = (item) => {
 //     return async(dispatch)=>{
 //     const res = await axios({
 //         method: 'post',
-//         url: "http://localhost:8000/api/getcustomer",
+//         url: "http://mern-ecommerce-app-api/api/getcustomer",
 //         // data: { email, password },
 //       });
 //         console.log(res);
