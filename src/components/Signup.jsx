@@ -7,6 +7,7 @@ import axios from 'axios'
 
 
 const Signup = () => {
+  const host = "http://mern-ecommerce-app-api"
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { signup } = bindActionCreators(actionCreators, dispatch)
@@ -21,7 +22,7 @@ const Signup = () => {
     const { name, email, password } = creds
     const res = await axios({
         method: 'post',
-        url: "http://mern-ecommerce-app-api/api/signup",
+        url: `${host}/api/signup",
         data: { name, email, password },
 
       });

@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 const Login = () => {
+  const host = "http://mern-ecommerce-app-api"
   const navigate = useNavigate()
   // const dispatch = useDispatch()
   // const { login } = bindActionCreators(actionCreators, dispatch)
@@ -18,7 +19,7 @@ const Login = () => {
     const { email, password } = creds
     const res = await axios({
         method: 'post',
-        url: "http://mern-ecommerce-app-api/api/login",
+        url: `${host}/api/login",
         data: { email, password },
       });
         console.log(res);
