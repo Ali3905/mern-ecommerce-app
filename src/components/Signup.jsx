@@ -22,7 +22,7 @@ const Signup = () => {
     const { name, email, password } = creds
     const res = await axios({
         method: 'post',
-        url: `${host}/api/signup",
+        url: `${host}/api/signup`,
         data: { name, email, password },
 
       });

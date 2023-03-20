@@ -19,7 +19,7 @@ const Login = () => {
     const { email, password } = creds
     const res = await axios({
         method: 'post',
-        url: `${host}/api/login",
+        url: `${host}/api/login`,
         data: { email, password },
       });
         console.log(res);
