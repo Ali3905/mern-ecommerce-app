@@ -29,7 +29,7 @@ const Signup = () => {
     await localStorage.setItem("token", res.data.authToken)
 
     setCreds({})
-    navigate("/")
+    navigate("/mern-ecommerce-app")
   }
   return (
     <div className='container signup my-3'>

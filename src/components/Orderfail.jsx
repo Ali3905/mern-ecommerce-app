@@ -12,7 +12,7 @@ const Ordersuccess = () => {
                 <h3 className='text-center'>Order has been Failed</h3>
                 <i className="bi bi-emoji-frown-fill sad_icon"></i>
                 <p>Your Order has been Failed due to some error</p>
-                <button className='btn btn-primary btn_link'><Link className='btn_link' to="/">Back to home</Link></button>
+                <button className='btn btn-primary btn_link'><Link className='btn_link' to="/mern-ecommerce-app">Back to home</Link></button>
             </form>
 
         </div>

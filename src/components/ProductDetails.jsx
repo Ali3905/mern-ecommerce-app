@@ -65,7 +65,7 @@ useEffect(()=>{
 
     <nav aria-label="breadcrumb" className='bread'>
   <ol className="breadcrumb br">
-    <li className="breadcrumb-item"><a href="/">Home</a></li>
+    <li className="breadcrumb-item"><a href="/mern-ecommerce-app">Home</a></li>
     <li className="breadcrumb-item active" aria-current="page">Details</li>
   </ol>
 </nav>
