@@ -32,10 +32,10 @@ function App() {
   
   return (
     <>
-      <Router>
+      <Router basename="/mern-ecommerce-app">
     <Navbar/>
         <Routes>
-          <Route exact path='/' element={<Home />}/>
+          <Route exact path='/mern-ecommerce-app' element={<Home />}/>
           <Route exact path='/details/:id' element={<ProductDetails/>}/>
           <Route exact path='/cart' element={<Cart/>}/>
           <Route exact path='/login' element={<Login/>}/>
