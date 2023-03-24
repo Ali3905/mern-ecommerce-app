@@ -7,8 +7,8 @@ import { actionCreators } from '../state';
 const Cart = () => {
     const [ quantity, setQuantity ] = useState(0);
 
-    const incQuantity = useCallback(()=> setQuantity(quantity+1))
-    const decQuantity = useCallback(()=> setQuantity(quantity-1))
+    const incQuantity = useCallback(()=> setQuantity(quantity+1),[quantity])
+    const decQuantity = useCallback(()=> setQuantity(quantity-1),[quantity])
 
     const cartItems = useSelector(state=>state.cart.products)
     const cartBill = useSelector(state=>state.cartBill.cart_bill)
@@ -21,7 +21,7 @@ const Cart = () => {
 
     useEffect(()=>{
         calculateBill(cartItems)
-    },[cartItems])
+    },[cartItems, calculateBill])
   return (
     <div className=' '>
         <div className="row cart ">
@@ -30,7 +30,7 @@ const Cart = () => {
             {cartItems && cartItems.map((product)=>{
              return   <div key={product._id} className='cart_item'>
                     <div className='cart_item1 d-flex flex-row justify-content-start align-items-center'>
-                    <img  src={product.image} alt="Product Image"/>
+                    <img  src={product.image} alt="Product"/>
                     <div className='mx-2'>
                         <h5 className='mb-0'>{product.name}</h5>
                         <p>{product.category}</p>

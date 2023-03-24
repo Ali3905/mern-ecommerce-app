@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { bindActionCreators } from 'redux';
@@ -13,10 +13,10 @@ const ProductDetails = () => {
   const items = useSelector(state=>state.products.products).find(e=>e._id === id)
   // const item = products.find(e=>e._id === id)
 
-  const item = useMemo(()=> items )
+  const item = useMemo(()=> items, [items] )
 
   const dispatch = useDispatch()
-  const { addToCart, cart,  } = bindActionCreators(actionCreators, dispatch)
+  const { addToCart, } = bindActionCreators(actionCreators, dispatch)
 
 
   const navigate = useNavigate();
@@ -65,7 +65,7 @@ useEffect(()=>{
 
     <nav aria-label="breadcrumb" className='bread'>
   <ol className="breadcrumb br">
-    <li className="breadcrumb-item"><a href="/mern-ecommerce-app">Home</a></li>
+    <li className="breadcrumb-item"><a href="/">Home</a></li>
     <li className="breadcrumb-item active" aria-current="page">Details</li>
   </ol>
 </nav>
@@ -75,13 +75,13 @@ useEffect(()=>{
         <div className='col-md-2 col-sm-5 p-2 d-flex '>
 
            <div className="d-flex flex-md-column sm_container">
-            <img className="sm" src={`${item.images[0]}`} alt="Product Image" />
-            <img className="sm" src={`${item.images[1]}`} alt="Product Image" />
-            <img className="sm" src={`${item.images[2]}`} alt="Product Image" /> 
+            <img className="sm" src={`${item.images[0]}`} alt="Product" />
+            <img className="sm" src={`${item.images[1]}`} alt="Product" />
+            <img className="sm" src={`${item.images[2]}`} alt="Product" /> 
           </div>  
         </div>
         <div className='col-md-6 col-sm-2 md'>
-            <img src={`${item.image}`} alt="Product Image" />
+            <img src={`${item.image}`} alt="Product" />
         </div>
         <div className='col-md-4 det'>
             <h5>{item.category}</h5>

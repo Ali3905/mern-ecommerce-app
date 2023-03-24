@@ -12,7 +12,7 @@ const Ordersuccess = () => {
                 <h3 className='text-center'>Order #21131 has been Completed</h3>
                 <i className="bi bi-check-circle-fill check_icon"></i>
                 <p>Your Order will be delivered in 2-4 days</p>
-                <Link className='btn btn-primary btn_link' to="/mern-ecommerce-app">Continue Shopping</Link>
+                <Link className='btn btn-primary btn_link' to="/">Continue Shopping</Link>
             </form>
 
         </div>

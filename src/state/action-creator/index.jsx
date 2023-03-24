@@ -65,13 +65,13 @@ export const removeFromCart = (id) => {
 
 export const emptyCart = (item) => {
     return async(dispatch)=>{
+        // eslint-disable-next-line
         const res = await axios({
             method: "delete",
-            url: `http://mern-ecommerce-app-api/api/emptycart`,
+            url: `${host}/api/emptycart`,
             headers: {
             authToken: localStorage.getItem("token")           }
             })
-        // console.log(res);
         dispatch({
             type : 'empty',
             payload : item

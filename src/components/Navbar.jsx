@@ -22,30 +22,30 @@ const Navbar = (props) => {
       // console.log(2;
   }
     
-},[])
+},[fetchCart])
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
   <div className="container-fluid">
-    <Link className="navbar-brand" to="/mern-ecommerce-app">E-shopper</Link>
+    <Link className="navbar-brand" to="/">E-shopper</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <Link className={`nav-link ${location.pathname==="/mern-ecommerce-app"?"active": ""}`} aria-current="page" to="/">Home</Link>
+          <Link className={`nav-link ${location.pathname==="/"?"active": ""}`} aria-current="page" to="/">Home</Link>
         </li>
         <li className="nav-item">
           <Link className={`nav-link ${location.pathname==="/cart"?"active": ""}`} to="/cart"><i className="bi bi-cart-plus"></i> Cart  <span className="badge text-bg-secondary">{cartItems && cartItems.length}</span></Link>
         </li>
         <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Category
           </a>
           <ul className="dropdown-menu">
-            <li><a className="dropdown-item" href="#">Mobile</a></li>
-            <li><a className="dropdown-item" href="#">Watches</a></li>
+            <li><a className="dropdown-item" href="/">Mobile</a></li>
+            <li><a className="dropdown-item" href="/">Watches</a></li>
             <li><Link className="dropdown-item" to="/orders">Sports</Link></li>
           </ul>       
         </li>
@@ -56,9 +56,9 @@ const Navbar = (props) => {
       </form>
       
       <div className="nav-item dropdown mx-2">
-          <a className="text-light nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <span className="text-light nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             My Account
-          </a>
+          </span>
           <ul className="dropdown-menu">
           {localStorage.length===0?<div>
             {location.pathname==="/signup"?<li><Link className="dropdown-item" to="/login">login</Link></li>:null}

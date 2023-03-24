@@ -1,6 +1,5 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../state';
 
@@ -8,11 +7,11 @@ const Orders = () => {
 
     const orders = useSelector(state=>state.orders.orders)
     const dispatch = useDispatch()
-    const { removeFromCart, calculateBill, addAddress, addOrder, emptyCart, getAddresses, removeAddress, order } = bindActionCreators(actionCreators, dispatch)
+    const { order } = bindActionCreators(actionCreators, dispatch)
   
     useEffect(()=>{
         order()
-    },[])
+    },[order])
   return (
     <div className=' '>
         <div className="row cart ">
@@ -22,7 +21,7 @@ const Orders = () => {
                     return <div key={i}>{ele.items.map((product, it)=>{
                         return   <div key={product._id} className='cart_item'>
                                <div className='d-flex flex-row justify-content-start '>
-                               <img  src={product.image} alt="Product Image"/>
+                               <img  src={product.image} alt="Product"/>
                                <div className='mb-0 mx-2'>
                                    <h5 className='mb-0'>{product.name}</h5>
                                    <p>{product.category}</p>

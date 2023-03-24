@@ -51,7 +51,7 @@ const Home = () => {
         return () => {
             cart()
         }
-    },[])
+    },[cart, fetchCart])
   
    
   return (

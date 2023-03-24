@@ -2,19 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../state'
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  useNavigate
-} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Checkout = () => {
   const [newAddress, setNewAddress] = useState(false)
-  const [name, setName] = useState()
   const [address, setAddress] = useState({
     name:'',
     email: '',
@@ -28,7 +21,7 @@ const Checkout = () => {
   const shipping_address = useSelector(state=>state.shipping_address.items)
 
   const dispatch = useDispatch()
-  const { removeFromCart, calculateBill, addAddress, addOrder, emptyCart, getAddresses, removeAddress } = bindActionCreators(actionCreators, dispatch)
+  const { calculateBill, addAddress, addOrder, emptyCart, getAddresses, removeAddress } = bindActionCreators(actionCreators, dispatch)
 
   const navigate = useNavigate()
 
@@ -82,12 +75,11 @@ const handl_rem_add = (id) => {
 }
   useEffect(()=>{
     calculateBill(cartItems)
-},[cartItems])
+},[cartItems, calculateBill])
 
   useEffect(()=>{
     getAddresses()
-    console.log("address");
-},[])
+},[getAddresses])
   
 
   return (

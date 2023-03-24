@@ -1,7 +1,4 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { actionCreators } from '../state'
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 
@@ -9,8 +6,6 @@ import axios from 'axios'
 const Signup = () => {
   const host = "https://mern-ecommerce-app-backend-zeta.vercel.app"
   const navigate = useNavigate()
-  const dispatch = useDispatch()
-  const { signup } = bindActionCreators(actionCreators, dispatch)
   const [creds, setCreds] = useState({
     name:'',
     email:'',
@@ -29,7 +24,7 @@ const Signup = () => {
     await localStorage.setItem("token", res.data.authToken)
 
     setCreds({})
-    navigate("/mern-ecommerce-app")
+    navigate("/")
   }
   return (
     <div className='container signup my-3'>
