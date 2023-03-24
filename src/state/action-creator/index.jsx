@@ -1,5 +1,5 @@
 import axios from "axios"
-const host = "http://mern-ecommerce-app-api"
+const host = "https://mern-ecommerce-app-backend-zeta.vercel.app"
 
 export const cart = (item) => {
         return async(dispatch)=>{

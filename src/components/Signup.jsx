@@ -7,7 +7,7 @@ import axios from 'axios'
 
 
 const Signup = () => {
-  const host = "http://mern-ecommerce-app-api"
+  const host = "https://mern-ecommerce-app-backend-zeta.vercel.app"
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { signup } = bindActionCreators(actionCreators, dispatch)

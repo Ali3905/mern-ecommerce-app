@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 const Login = () => {
-  const host = "http://mern-ecommerce-app-api"
+  const host = "https://mern-ecommerce-app-backend-zeta.vercel.app"
   const navigate = useNavigate()
   // const dispatch = useDispatch()
   // const { login } = bindActionCreators(actionCreators, dispatch)
