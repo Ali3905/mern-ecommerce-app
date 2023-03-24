@@ -75,11 +75,11 @@ const handl_rem_add = (id) => {
 }
   useEffect(()=>{
     calculateBill(cartItems)
-},[cartItems, calculateBill])
+},[cartItems])
 
   useEffect(()=>{
     getAddresses()
-},[getAddresses])
+},[])
   
 
   return (

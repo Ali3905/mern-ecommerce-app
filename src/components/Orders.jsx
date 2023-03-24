@@ -11,7 +11,7 @@ const Orders = () => {
   
     useEffect(()=>{
         order()
-    },[order])
+    },[])
   return (
     <div className=' '>
         <div className="row cart ">

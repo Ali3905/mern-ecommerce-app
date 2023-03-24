@@ -21,7 +21,7 @@ const Cart = () => {
 
     useEffect(()=>{
         calculateBill(cartItems)
-    },[cartItems, calculateBill])
+    },[cartItems])
   return (
     <div className=' '>
         <div className="row cart ">

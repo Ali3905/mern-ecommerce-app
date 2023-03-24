@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react'
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
 import { useParams } from 'react-router-dom';
@@ -11,7 +10,6 @@ import { actionCreators } from '../state';
 const ProductDetails = () => {
   let { id } = useParams()
   const items = useSelector(state=>state.products.products).find(e=>e._id === id)
-  // const item = products.find(e=>e._id === id)
 
   const item = useMemo(()=> items, [items] )
 
@@ -45,8 +43,6 @@ const handle_buy = () => {
         navigate("/login")
     }
 }
-useEffect(()=>{
-},[])
   return (
     <>
    <ToastContainer

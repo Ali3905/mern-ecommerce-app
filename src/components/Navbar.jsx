@@ -19,10 +19,7 @@ const Navbar = (props) => {
   useEffect(()=>{
     if(localStorage.getItem("token")){
       fetchCart()
-      // console.log(2;
-  }
-    
-},[fetchCart])
+  }},[])
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
