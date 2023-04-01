@@ -20,6 +20,11 @@ const Navbar = (props) => {
     if(localStorage.getItem("token")){
       fetchCart()
   }},[])
+  useEffect(()=>{
+    if(!localStorage.getItem("token")){
+      localStorage.clear()
+  }},[])
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -57,9 +62,9 @@ const Navbar = (props) => {
             My Account
           </span>
           <ul className="dropdown-menu">
-          {localStorage.length===0?<div>
-            {location.pathname==="/signup"?<li><Link className="dropdown-item" to="/login">login</Link></li>:null}
-            {location.pathname==="/login"?<li><Link className="dropdown-item" to="/signup">Signup</Link></li>:null}
+          {!localStorage.getItem("token")?<div>
+           <li><Link className="dropdown-item" to="/login">login</Link></li>
+           <li><Link className="dropdown-item" to="/signup">Signup</Link></li>
             </div>: <div><Link className="dropdown-item" onClick={logout} to="/login">Logout</Link>
             <li><Link className="dropdown-item" to="/orders">Orders</Link></li> </div> } 
           </ul>     
