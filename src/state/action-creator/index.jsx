@@ -39,7 +39,6 @@ export const addToCart = (id) => {
             headers: {
             authToken: localStorage.getItem("token")       }
             }) 
-            console.log(res.data);
         dispatch({
             type : 'add',
             payload : res.data

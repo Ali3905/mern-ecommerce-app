@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect,  useState } from 'react'
+import React, { useCallback, useEffect,  useMemo,  useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux'
@@ -13,14 +13,18 @@ const Cart = () => {
     const cartItems = useSelector(state=>state.cart.products)
     const cartBill = useSelector(state=>state.cartBill.cart_bill)
     const dispatch = useDispatch()
-    const { removeFromCart, calculateBill } = bindActionCreators(actionCreators, dispatch)
+    const { removeFromCart, calculateBill, fetchCart } = bindActionCreators(actionCreators, dispatch)
+
+    const finalCart = useMemo(()=>cartItems,[cartItems])
 
     const removeFromCart1 = (id) => {
         removeFromCart(id)
+        fetchCart()
     }
 
     useEffect(()=>{
         calculateBill(cartItems)
+        fetchCart()
     },[cartItems])
   return (
     <div className=' '>

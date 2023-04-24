@@ -39,9 +39,6 @@ const submitCart = (e) =>{
 }
 
 const checkout = (items) => {
-  console.log(cartItems);
-  console.log(cartBill);
-  console.log(address);
   addOrder({
     items: cartItems,
     bill: cartBill,

@@ -19,7 +19,6 @@ const Login = () => {
         url: `${host}/api/login`,
         data: { email, password },
       });
-        console.log(res);
        await localStorage.setItem("token", res.data.authToken)
     setCreds({})
     navigate("/")
