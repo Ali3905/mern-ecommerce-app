@@ -39,7 +39,7 @@ const Navbar = (props) => {
           <Link className={`nav-link ${location.pathname==="/"?"active": ""}`} aria-current="page" to="/">Home</Link>
         </li>
         <li className="nav-item">
-          <Link className={`nav-link ${location.pathname==="/cart"?"active": ""}`} to="/cart"><i className="bi bi-cart-plus"></i> Cart  <span className="badge text-bg-secondary">{cartItems && cartItems.length}</span></Link>
+          <Link className={`nav-link ${location.pathname==="/cart"?"active": ""}`} to="/mern-ecommerce-app/cart"><i className="bi bi-cart-plus"></i> Cart  <span className="badge text-bg-secondary">{cartItems && cartItems.length}</span></Link>
         </li>
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">

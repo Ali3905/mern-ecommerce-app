@@ -35,7 +35,7 @@ function App() {
       <Router>
     <Navbar/>
         <Routes>
-          <Route exact path='/' element={<Home />}/>
+          <Route exact path='/mern-ecommerce-app' element={<Home />}/>
           <Route exact path='/details/:id' element={<ProductDetails/>}/>
           <Route exact path='/mern-ecommerce-app/cart' element={<Cart/>}/>
           <Route exact path='/login' element={<Login/>}/>
