@@ -36,12 +36,12 @@ const Navbar = (props) => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <Link className={`nav-link ${location.pathname==="/"?"active": ""}`} aria-current="page" to="/">Home</Link>
+          <Link className={`nav-link ${location.pathname==="/"?"active": ""}`} aria-current="page" to="/mern-ecommerce-app">Home</Link>
         </li>
         <li className="nav-item">
-          <Link className={`nav-link ${location.pathname==="/cart"?"active": ""}`} to="/mern-ecommerce-app/cart"><i className="bi bi-cart-plus"></i> Cart  <span className="badge text-bg-secondary">{cartItems && cartItems.length}</span></Link>
+          <Link className={`nav-link ${location.pathname==="/cart"?"active": ""}`} to="/cart"><i className="bi bi-cart-plus"></i> Cart  <span className="badge text-bg-secondary">{cartItems && cartItems.length}</span></Link>
         </li>
-        <li className="nav-item dropdown">
+        {/* <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Category
           </a>
@@ -50,7 +50,7 @@ const Navbar = (props) => {
             <li><a className="dropdown-item" href="/">Watches</a></li>
             <li><Link className="dropdown-item" to="/orders">Sports</Link></li>
           </ul>       
-        </li>
+        </li> */}
       </ul>
       <form className="d-flex s_form" role="search">
         <input className="inp_search" type="search" placeholder="Search" aria-label="Search"/>
