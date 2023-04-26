@@ -36,7 +36,7 @@ const Navbar = (props) => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <Link className={`nav-link ${location.pathname==="/"?"active": ""}`} aria-current="page" to="/mern-ecommerce-app">Home</Link>
+          <Link className={`nav-link ${location.pathname==="/"?"active": ""}`} aria-current="page" to="/">Home</Link>
         </li>
         <li className="nav-item">
           <Link className={`nav-link ${location.pathname==="/cart"?"active": ""}`} to="/cart"><i className="bi bi-cart-plus"></i> Cart  <span className="badge text-bg-secondary">{cartItems && cartItems.length}</span></Link>
