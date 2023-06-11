@@ -35,13 +35,13 @@ const Home = () => {
         }
     };
 
-    const handle_buy = () => {
-        if (localStorage.getItem("token")) {
-            navigate("/checkout")
-        } else {
-            navigate("/login")
-        }
-    }
+    // const handle_buy = () => {
+    //     if (localStorage.getItem("token")) {
+    //         navigate("/checkout")
+    //     } else {
+    //         navigate("/login")
+    //     }
+    // }
     useEffect(()=>{
         cart();
 
@@ -77,7 +77,7 @@ const Home = () => {
                 <p>{product.category}</p>
                 <h5 className="card-title"><Link to={`/details/${product._id}`}>{product.name}</Link></h5>
                 <p>${product.price} <span className='float-end' >Rating {[...Array(product.rating)].map((ele, i)=>{return <i key={i} className="bi bi-star-fill star"></i>})}</span></p>
-                <button className="btn btn-primary text-light" onClick={handle_buy}>Buy Now</button>
+                {/* <button className="btn btn-primary text-light" onClick={handle_buy}>Buy Now</button> */}
                 <button className="btn btn-primary mx-2" onClick={()=>notify(product._id)}>Add to cart</button>
             </div>
         </div>

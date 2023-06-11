@@ -14,7 +14,7 @@ const ProductDetails = () => {
   const item = useMemo(()=> items, [items] )
 
   const dispatch = useDispatch()
-  const { addToCart, } = bindActionCreators(actionCreators, dispatch)
+  const { addToCart } = bindActionCreators(actionCreators, dispatch)
 
 
   const navigate = useNavigate();
@@ -36,13 +36,13 @@ const ProductDetails = () => {
     }
 };
 
-const handle_buy = () => {
-    if (localStorage.getItem("token")) {
-        navigate("/checkout")
-    } else {
-        navigate("/login")
-    }
-}
+// const handle_buy = () => {
+//     if (localStorage.getItem("token")) {
+//         navigate("/checkout")
+//     } else {
+//         navigate("/login")
+//     }
+// }
   return (
     <>
    <ToastContainer
@@ -113,8 +113,8 @@ const handle_buy = () => {
             </div>
 
             </div>
-            <button className="btn btn-primary" onClick={handle_buy}>Buy Now</button>
-            <button className='btn btn-primary mx-2' onClick={()=>notify(item)}><i className="bi bi-cart-plus"></i>  Add to Cart</button>
+            {/* <button className="btn btn-primary" onClick={handle_buy}>Buy Now</button> */}
+            <button className='btn btn-primary mx-2' onClick={()=>notify(item._id)}><i className="bi bi-cart-plus"></i>  Add to Cart</button>
             <h5>Details</h5>
             <ul>
                 <li>Metal Covering</li>

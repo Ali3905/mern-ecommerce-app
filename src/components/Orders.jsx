@@ -30,7 +30,7 @@ const Orders = () => {
                                </div>
                            </div>
                        })}
-                       <div className="d-flex flex-row justify-content-between w-75 m-auto">
+                       <div className="d-flex flex-row justify-content-between w-75 m-auto order_details">
                         <div className="left">
                             <h3>Billing Details</h3>
                             <div className='d-flex justify-content-between'>

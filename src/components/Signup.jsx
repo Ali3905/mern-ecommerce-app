@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const Signup = () => {
@@ -21,13 +22,39 @@ const Signup = () => {
         data: { name, email, password },
 
       });
-    await localStorage.setItem("token", res.data.authToken)
+      if(res.data.authToken){
+        await localStorage.setItem("token", res.data.authToken)
+        setCreds({})
+        navigate("/")
+      }else{
 
-    setCreds({})
-    navigate("/")
+        toast.error('Something went wrong', {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
+      }
   }
   return (
     <div className='container signup my-3'>
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+        />
+    <ToastContainer />
         <h2 className='text-center'>E-Shopper</h2>
         <div className="col-5 d-flex justify-content-center mx-auto my-4 form_container ">
             <form action="POST" className='d-flex flex-column mx-auto'>
