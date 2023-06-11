@@ -52,10 +52,10 @@ const Navbar = (props) => {
           </ul>       
         </li> */}
       </ul>
-      <form className="d-flex s_form" role="search">
+      {/* <form className="d-flex s_form" role="search">
         <input className="inp_search" type="search" placeholder="Search" aria-label="Search"/>
         <button className="search" type="submit"><i className="bi bi-search"></i></button>
-      </form>
+      </form> */}
       
       <div className="nav-item dropdown mx-2">
           <span className="text-light nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
